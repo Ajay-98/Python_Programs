@@ -1,0 +1,5 @@
+def subdirs(path):
+    """Yield directory names not starting with '.' under given path."""
+    for entry in os.scandir(path):
+        if not entry.name.startswith('.') and entry.is_dir():
+            yield entry.name
